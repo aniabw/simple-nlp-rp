@@ -2,21 +2,11 @@
 
 {% block content %}
 
+
 <div class="row mx-md-n5">
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-1 main">
 
-          <h2 class="sub-header">The most popular words</h2>
-          <div class="row">
-            <div class="col-sm-4">
-              <ul>
-                {% for item in most_common_words %}
-                <li> {{ item.0 }} ({{ item.1}}) </li>
-                {% endfor %}
-              </ul>
-            </div>
-          </div>
-
-          <h2 class="sub-header">More interesting words</h2>
+          <h2 class="sub-header">Interesting words</h2>
           <div class="table-responsive">
             <table class="table table-striped">
               <thead>
@@ -32,10 +22,12 @@
                   <tr>
                     <td>{{ value.word }}</td>
                     <td>{{ value.occurance }}</td>
-                    <td>file name</td>
+                    <td>
+                        {{ value.filename }}
+                    </td>
                     <td>
                       {% for skey, svalue in value.sentences.items %}
-                            {{ svalue }} <br /><br />
+                          {{ svalue }} <br />
                       {% endfor %}
                     </td>
                   </tr>
