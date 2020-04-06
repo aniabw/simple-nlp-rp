@@ -7,14 +7,13 @@ This Project is done using python language (Dijango framework) with nltk library
 
 ## How to run this project
 
-Please make sure, you have Django installed with neccesary libraries
+Please make sure you have Django installed with the neccesary libraries
 
 * Run in the console
 > python manage.py runserver
 * In your browser go to http://127.0.0.1:8000/ 
 
 ![simple_nlp](http://fsdfffsdff.hekko24.pl/simplenlp.jpg)
-
 
 
 ```php

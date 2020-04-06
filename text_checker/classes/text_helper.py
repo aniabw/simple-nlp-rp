@@ -21,8 +21,8 @@ class Text_helper():
     def get_most_common_words(self, words):
         return collections.Counter(words).most_common()
 
-    def get_words_longer_than_10(self, most_common_words):
-        return [w for w in most_common_words if len(w[0]) > 10]
+    def get_words_longer_than(self, most_common_words, lenght):
+        return [w for w in most_common_words if len(w[0]) > lenght]
 
     def get_sentences_with_highlited_words(self, sentence, word):
         return mark_safe(sentence.replace(word, '<span class="bg-primary">' + word + '</span>'))
