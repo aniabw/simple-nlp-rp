@@ -7,6 +7,7 @@ This Project is done using python language (Dijango framework) with nltk library
 
 ## How to run this project
 
+Please make sure, you have Django installed with neccesary libraries
 
 * Run in the console
 > python manage.py runserver
