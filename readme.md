@@ -17,5 +17,5 @@ This Project is done using python language (Dijango framework) with nltk library
 
 
 ```php
-@todo: tests
+@todo: tests, working on performance
 ```

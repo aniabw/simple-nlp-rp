@@ -1,34 +1,23 @@
-from text_checker.classes.data_source import Data_source_interface
 from text_checker.classes.text_helper import Text_helper
-import glob
+from text_checker.classes.word_report import Word_report
+from simple_nlp.classes.file import File
 
-class File(Data_source_interface):
-
-    def __init__(self, dir_path, file_extention):
+class File_word_report(Word_report):
+    def __init__(self, dir_path, extention):
         self.dir_path = dir_path
-        self.file_extention = file_extention
-
-    def read_file(self, file_source):
-        file = open(file_source, encoding="utf8")
-        data = file.read()
-        file.close()
-        return data
-
-    def get_files_from_directory_by_extention(self, path, extention):
-        files = glob.glob(path + "*."+extention)
-        return files
+        self.file = File(self.dir_path, extention)
 
     def get_word_report(self):
-        files = self.get_files_from_directory_by_extention(self.dir_path, self.file_extention)
-
         helper_set = {""}
         results = {}
         counter = 0
-        for f_index, item in enumerate(files, start=0):
-            data = self.read_file(item)
-            th = Text_helper(data)
+
+        for f_index, item in enumerate(self.file.get_files_from_directory_by_extention(), start=0):
+            file_data = self.file.read_file(item)
+            th = Text_helper(file_data)
 
             sentences = th.get_sentences()
+
             tokens = th.split_words_by_punctuation()
             words = th.filter_out_punctuation(tokens)
             most_common_words = th.get_most_common_words(words)
