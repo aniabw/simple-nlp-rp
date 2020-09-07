@@ -16,4 +16,3 @@ Please make sure you have Django installed with the neccesary libraries
 ![simple_nlp](http://fsdfffsdff.hekko24.pl/simplenlp.jpg)
 
 
-.
